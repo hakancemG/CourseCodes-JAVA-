@@ -1,0 +1,36 @@
+// Vücut kitle indeksinin hesaplanması.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;   // Gerekli olan Scanner importu
+
+public class Proje001 {
+    public static void main(String[] args) {   
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.print("Enter your weight here(kg): ");
+        float weight = keyboard.nextFloat();
+        
+        System.out.print("Enter your height here(m²): ");
+        float height = keyboard.nextFloat();
+        
+        float bodyMassIndex = weight / (height*height);
+        
+        System.out.println("\nYour body mass index is: "+bodyMassIndex);
+        
+        if(bodyMassIndex<18.5){
+            System.out.println("You are under your ideal weight.");
+        }else if((18.5<=bodyMassIndex)&& (bodyMassIndex<=24.9)){
+            System.out.println("You have the ideal weight.");
+        }else if((25<=bodyMassIndex)&& (bodyMassIndex<=29.9)){
+            System.out.println("You are above your ideal weight.");
+        }else if((30<=bodyMassIndex)&& (bodyMassIndex<=39.9)){
+            System.out.println("You are very above your ideal weight(obese).");
+        }else if(bodyMassIndex>40){
+            System.out.println("You are extremely above your ideal weight(morbid obese).");
+        }else{
+            System.out.println("Please check what you entered.");
+        }
+    }
+}
