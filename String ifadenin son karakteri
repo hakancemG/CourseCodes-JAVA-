@@ -1,0 +1,18 @@
+// String ifadenin son karakteri.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Please enter your message here:");
+        
+        String message = keyboard.nextLine();
+        
+        System.out.println(message.endsWith("n"));
+    } 
+}
