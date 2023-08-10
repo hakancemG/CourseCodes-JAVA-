@@ -1,0 +1,14 @@
+// String ifadede aranan ifadenin kaçıncı indiste olduğunu gösterme 2.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        String message2 = "Today is very boring!";
+
+        System.out.println(message2.lastIndexOf('i'));
+
+        System.out.println(message2.lastIndexOf("ori"));       
+    } 
+}
