@@ -1,0 +1,25 @@
+// Kullanıcıdan alınan iki sayıyı swap yapma.
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;   // Gerekli olan Scanner importu
+
+public class Proje001 {
+    public static void main(String[] args) {   
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        byte first;     byte second;
+        
+        System.out.print("Enter the 1st number: ");
+        first = keyboard.nextByte();        
+        System.out.print("Enter the 2nd number: ");
+        second = keyboard.nextByte();
+        
+        System.out.println("Before swap, 1st Number: "+first+" & 2nd Number: "+second);
+        
+        byte temp = first;
+        first = second;
+        second = temp;        
+        
+        System.out.println("\nAfter swap, 1st Number: "+first+" & 2nd Number: "+second);
+    }
+}
