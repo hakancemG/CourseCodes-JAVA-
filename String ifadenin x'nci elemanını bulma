@@ -1,0 +1,18 @@
+// String ifadenin x'nci elemanını bulma.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Please enter your message here:");
+        String message = keyboard.nextLine();
+        
+        System.out.println("2nd character of given text is: "+message.charAt(1));
+        
+    }
+}
