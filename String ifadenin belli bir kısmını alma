@@ -1,0 +1,19 @@
+// String ifadenin belli bir kısmını alma.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Please enter your message here:");
+        
+        String message = keyboard.nextLine();
+        char[] messageArray= new char[2];
+        message.getChars(0,2,messageArray,0);
+        System.out.println(messageArray);
+    } 
+}
