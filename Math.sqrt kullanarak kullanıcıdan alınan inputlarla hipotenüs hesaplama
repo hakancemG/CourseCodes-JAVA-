@@ -1,0 +1,22 @@
+// Math.sqrt kullanarak kullanıcıdan alınan inputlarla hipotenüs hesaplama
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;   // Gerekli olan Scanner importu
+
+public class Proje001 {
+    public static void main(String[] args) {   
+        
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.print("Enter the short angle: ");
+        double triangle_short = keyboard.nextDouble();
+
+        System.out.print("Enter the long angle: ");
+        double triangle_long = keyboard.nextDouble();
+
+        double triangle_h = (Math.sqrt((triangle_long*triangle_long)+(triangle_short*triangle_short))) ;
+
+        System.out.println("The answer is: "+triangle_h);
+    }
+}
