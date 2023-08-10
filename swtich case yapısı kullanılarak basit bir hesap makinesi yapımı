@@ -1,0 +1,63 @@
+// swtich case yapısı kullanılarak basit bir hesap makinesi yapımı
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;   // Gerekli olan Scanner importu
+
+public class Proje001 {
+    public static void main(String[] args) {   
+        
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.println("Welcome to simple calculator!");
+        
+        System.out.print("Enter 1st number here: ");
+        float number1=keyboard.nextFloat();   
+        
+        System.out.println("""
+                           Please select your calculate!
+                           Press (1) to sum.
+                           Press (2) to subtract.
+                           Press (3) to multiply.
+                           Press (4) to division.""");
+        int option=keyboard.nextInt();
+        
+        System.out.print("Enter 2nd number here: ");
+        float number2=keyboard.nextFloat();
+        
+        float result;
+        switch(option){
+            case 1: //Toplama işlemi
+            {
+                result = number1 + number2;
+                System.out.println("The sum of given two numbers: "+result);            
+                break;
+            }
+            case 2: //Çıkarma işlemi
+            {
+                result = number1 - number2;
+                System.out.println("The subtraction of given two numbers: "+result);
+                break;
+            }
+            case 3: //Çarpma işlemi
+            {
+                result = number1 * number2;
+                System.out.println("The multiplication of given two numbers: "+result);
+                break;
+            }
+            case 4: //Bölme işlemi
+            {
+                if(number2 == 0){
+                    System.out.println("Result: Infinity!");
+                }else{
+                    result = number1/number2;
+                    System.out.println("The division of given two numbers: "+result);
+                }
+                break;
+            }
+            default: 
+                System.out.println("Please try again!");
+            break;
+        }
+    }
+}
