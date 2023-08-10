@@ -1,0 +1,32 @@
+//Kullanıcıdan doğru girişi yapana kadar input alma (while döngüsü kullanılarak)
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;   // Gerekli olan Scanner importu
+
+public class Proje001 {
+
+    public static void main(String[] args) {   
+        
+        while(true){    // Kullanıcı girişi doğru olana kadar.
+
+            Scanner keyboard = new Scanner(System.in);        
+
+            System.out.print("Please enter a number: ");
+            
+            if(keyboard.hasNextInt()){                
+
+                int number = keyboard.nextInt();
+
+                System.out.println("The number you entered: "+number);
+
+                break;         // Amacımıza ulaştığımızda döngüden çık.
+            }
+
+            else{
+                System.out.println("Wrong! Try again! ");
+            }
+        }
+    }
+}
+
