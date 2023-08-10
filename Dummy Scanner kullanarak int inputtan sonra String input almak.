@@ -1,0 +1,25 @@
+// Dummy Scanner kullanarak int inputtan sonra String input almak.
+// Scanner ile "int veya double"dan sonra nextLine() almak isteniyorsa kullanılır.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;   // Gerekli olan Scanner importu
+
+public class Proje001 {
+    public static void main(String[] args) {   
+
+        Scanner keyboard = new Scanner(System.in);
+
+        System.out.print("Enter your age here: ");
+        int age = keyboard.nextInt();
+
+        keyboard.nextLine(); //dummy scanner
+
+        System.out.print("Enter your name here: ");
+        String name = keyboard.nextLine();
+
+        System.out.println("\nYour age: "+age);
+        System.out.println("Your name: "+name);
+    }
+}
+
