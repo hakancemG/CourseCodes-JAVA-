@@ -1,0 +1,29 @@
+// Kullanıcıdan alınan 3 sayıdan en büyüğünü bulma 2.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;   // Gerekli olan Scanner importu
+
+public class Proje001 {
+    public static void main(String[] args) {   
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.print("Enter the 1st number here: ");
+        byte first = keyboard.nextByte();
+        System.out.print("Enter the 2nd number here: ");
+        byte second = keyboard.nextByte();
+        System.out.print("Enter the 3rd number here: ");
+        byte third = keyboard.nextByte();
+        
+        byte max;
+        
+        if(first>=second && second>=third){
+            max=first;
+        }else if(second>=first && second>=third){
+            max=second;
+        }else{
+            max = third;
+        }
+        System.out.print("The highest number is: "+max);
+    }
+}
