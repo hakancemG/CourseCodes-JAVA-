@@ -1,0 +1,12 @@
+// toLowerCase & toUpperCase metodu kullanımı.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        String message = "     Tabs";
+        System.out.println(message);
+        System.out.println(message.trim());
+    } 
+}
