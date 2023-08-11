@@ -1,0 +1,17 @@
+// substring metodu kullanımı.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        String message = "Today is thirsday!";
+        System.out.println(message);
+        String message2 = message.substring(2);
+        System.out.println(message2);
+        
+        System.out.println(message.substring(0,8));
+        System.out.println(message.substring(9));
+        
+    } 
+}
