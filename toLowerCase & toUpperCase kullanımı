@@ -1,0 +1,13 @@
+// toLowerCase & toUpperCase metodu kullanımı.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        String message = "My name is Hakan Cem Gerçek";
+        
+        System.out.println(message.toLowerCase());
+        System.out.println(message.toUpperCase());
+    } 
+}
