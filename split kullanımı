@@ -1,0 +1,22 @@
+// split metodu kullanımı.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        String message = "Today is thirsday!";
+        String message2 = "Today_is_thirsday!";
+        
+        for(String text: message.split(" ")){
+            System.out.println(text);
+        }
+        
+        System.out.println("-----------------------");
+        
+        for(String text2: message2.split("-")){
+            System.out.println(text2);
+        }
+        
+    } 
+}
