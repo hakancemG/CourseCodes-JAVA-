@@ -1,0 +1,31 @@
+// Mini Proje 2: Mükemmel sayılar.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+import java.util.Scanner;
+
+public class Proje001 {
+    public static void main(String[] args) {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter a number here: ");
+        int number = keyboard.nextInt();
+
+        int total=0;        //Mükemmel sayılar kendisini bölen sayıların
+                            //toplamı kadardır.
+        
+        for(int i=1; i<number; i++){    //0'a bölme hatasından kaçındık.
+
+            if(number%i==0){
+                total = total + i;      //Girilen sayıyı tam bölenlerin
+                                        //toplamı mükemmel sayıyı verecektir.
+            }            
+        }
+
+        if(total==number){              
+                System.out.println("The given number is a perfect number!");
+        }else{
+                System.out.println("The given number is not a perfect number.");
+        }
+    } 
+}
