@@ -1,0 +1,14 @@
+// String ifadede replace kullanımı.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001 {
+    public static void main(String[] args) {         
+        
+        String message = "Today is thirsday!";
+        System.out.println(message);
+        String message2 = message.replace(" ", "-");
+        System.out.println(message2);
+        
+    } 
+}
