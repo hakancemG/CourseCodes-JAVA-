@@ -1,0 +1,22 @@
+// Mini Proje 3: Sayının dizinin içinde olup olmadığını bulma 1.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001 {
+    public static void main(String[] args) {
+
+        int[] array = new int[]{1,2,5,7,9,0};
+        int target_number = 5;
+
+        for(int i=0; i<array.length; i++){
+
+            if(array[i]==target_number){
+
+                System.out.println("The given number is in the array!");
+                return;
+
+            }
+        }
+        System.out.println("The given number is not in the array.");
+    } 
+}
