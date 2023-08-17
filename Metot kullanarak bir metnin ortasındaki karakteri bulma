@@ -1,0 +1,28 @@
+// Metnin ortasındaki karakterleri bulma.
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001 {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter something: ");
+        String text = keyboard.nextLine();
+        System.out.println(theMiddle(text));
+    }
+    public static String theMiddle(String text){
+        int position;           		  //  Ortadaki sayınyı bulmak için başlangıç pozisyonu.
+        int length;         			  //  Çift/tek olma durumuna göre alınacak orta sayısı.
+        if(text.length()%2 == 0){     		  //  Çiftse iki karakter ortadır.
+            position = text.length() / 2 - 1;	  //  abcd için pozisyon b'den başlar
+            length = 2;                 	  //  yani 1. indis, ortadaki ise 'bc'
+        }else{
+            position = text.length() / 2;         //  Tekse bir karakter ortadır.
+            length = 1;                 	  //  abc için pozisyon a'dan başlar.
+        }        
+        return text.substring(position, position + length);
+
+        // abcd için pozisyon 1. indis olan a'dır.
+        // uzunluk ise çift sayılı karaktere sahip olduğu için orta 2 karakterden
+        // oluşacağından 2 olur.
+        // 1. indis başlangıç, 1+2=3 yani 3. indise kadar yani bc orta karakterlerdir. 
+    }
+}
