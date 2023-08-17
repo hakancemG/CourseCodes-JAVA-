@@ -1,0 +1,18 @@
+// Girilen üç sayının ortalamasını bulan program.
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001 {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the 1st number: ");
+        float a = keyboard.nextFloat();
+        System.out.print("Enter the 1st number: ");
+        float b = keyboard.nextFloat();
+        System.out.print("Enter the 1st number: ");
+        float c = keyboard.nextFloat();
+        System.out.println(theAverage(a, b, c));
+    }
+    public static float theAverage(float a, float b, float c){
+        return (a+b+c)/3;
+    }
+}
