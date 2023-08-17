@@ -1,0 +1,16 @@
+// Üç sayı içinden en küçüğünü bulan metot.
+package hkndeneme;  // Hakan Cem Gerçek
+public class Proje001 {
+    public static void main(String[] args) {
+        theSmallest(25, 37, 29);
+    }
+    public static void theSmallest(int a, int b, int c){
+        if((a<=b) && (a<=c)){
+            System.out.println("The smallest number is: "+a);
+        }else if((b<=a) && (b<=c)){
+            System.out.println("The smallest number is: "+b);
+        }else if((c<=a)&&(c<=b)){
+            System.out.println("The smalles number is: "+c);
+        }
+    }
+}
