@@ -1,0 +1,31 @@
+// Basamak sayısı farketmeden girilen sayının rakamlarının toplamı 1
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001 {
+    public static void main(String[] args) {
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter your number here: ");
+        String str_number = keyboard.nextLine();
+        System.out.println(digitSum(str_number));
+
+    }
+    public static int digitSum(String str_number){
+        int sum = 0;
+
+        for(int i=0; i<str_number.length(); i++){      
+
+            char c=str_number.charAt(i);        
+
+            //Metnin her elemanı char'a dönüştürüldü.
+
+            int convertedNumber = Integer.parseInt( Character.toString(c) );
+
+            // char'a dönüştürülen eleman, String ifadeden integer'a dönüştürmeye
+            // yarayan metoda parametre olarak verilirken stringe dönüştürüldü.
+
+            sum = sum + convertedNumber;
+        }
+        return sum;
+    }
+}
