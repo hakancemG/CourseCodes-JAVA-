@@ -1,0 +1,18 @@
+// Math.min() metodu ile girilen üç sayı içinden en küçüğünü bulan metot.
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001 {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the 1st number here: ");
+        int a = keyboard.nextInt();
+        System.out.print("Enter the 2nd number here: ");
+        int b = keyboard.nextInt();
+        System.out.print("Enter the 3rd number here: ");
+        int c = keyboard.nextInt();
+        System.out.println(theSmallest(a, b, c));
+    }
+    public static int theSmallest(int a, int b, int c){
+        return Math.min(Math.min(a,b),c);
+    }
+}
