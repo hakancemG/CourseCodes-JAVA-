@@ -1,0 +1,23 @@
+// Metnin içindeki ünlü harflerin sayısını bulma.
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001 {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter something here: ");
+        String text = keyboard.nextLine();
+        System.out.println(vowels(text));
+                
+    }
+    public static int vowels(String text){
+        int count = 0;
+        for(int i=0; i<text.length(); i++){
+            if(text.charAt(i)=='a' || text.charAt(i)=='e' ||
+                    text.charAt(i)=='o' || text.charAt(i)=='u' ||
+                    text.charAt(i)=='i'){
+                count++;
+            }
+        }
+        return count;
+    }
+}
