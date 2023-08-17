@@ -1,0 +1,24 @@
+// Girilen üç sayı içinden en küçüğünü bulan metot.
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001 {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.print("Enter the 1st number here: ");
+        int a = keyboard.nextInt();
+        System.out.print("Enter the 2nd number here: ");
+        int b = keyboard.nextInt();
+        System.out.print("Enter the 3rd number here: ");
+        int c = keyboard.nextInt();
+        theSmallest(a, b, c);
+    }
+    public static void theSmallest(int a, int b, int c){
+        if((a<=b) && (a<=c)){
+            System.out.println("The smallest number is: "+a);
+        }else if((b<=a) && (b<=c)){
+            System.out.println("The smallest number is: "+b);
+        }else if((c<=a)&&(c<=b)){
+            System.out.println("The smalles number is: "+c);
+        }
+    }
+}
