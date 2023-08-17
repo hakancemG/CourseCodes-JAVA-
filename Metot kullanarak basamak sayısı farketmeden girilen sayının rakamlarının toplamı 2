@@ -1,0 +1,19 @@
+// Basamak sayısı farketmeden girilen sayının rakamlarının toplamı 2.
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001 {
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter your number here: ");
+        int digits = keyboard.nextInt();
+        System.out.println(digitSum(digits));
+    }
+    public static int digitSum(int number){
+        int sum = 0;
+        while(number>0){
+            sum = sum + (number % 10);
+            number = number / 10;
+        }
+        return sum;
+    }
+}
