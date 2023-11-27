@@ -1,0 +1,31 @@
+//Metotlar 5: replace() metodu.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001{
+    
+    public static void main(String[] args){
+        String str1 = "Java";
+        
+        String str2 = str1.replace("Ruby","C++");
+        System.out.println(str2);
+        
+        System.out.println("Codlama.".replace('C','K'));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
