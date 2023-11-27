@@ -1,0 +1,16 @@
+//Metot kavramı: geriye değer döndürmeyen ve parametre alan metot örneği.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001{
+    
+    public static void main(String[] args){
+        //call işlemi.
+        Metot2(3,5);
+    }
+    
+    //ilgili metot.
+    public static void Metot2(int prm1, int prm2){
+        System.out.println(prm1+prm2);
+    }    
+}
