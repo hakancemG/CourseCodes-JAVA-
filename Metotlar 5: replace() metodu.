@@ -1,0 +1,17 @@
+//Metotlar 5: replace() metodu.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001{
+    
+    public static void main(String[] args){
+        String str1 = "Python programlama.";
+        String str2 = "Java programlama.";
+        
+        System.out.println(str1);
+        String str3 = str1.replace(str1, str2);
+        
+        System.out.println(str3);
+    }
+}
+
