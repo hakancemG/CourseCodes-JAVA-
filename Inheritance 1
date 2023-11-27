@@ -1,0 +1,120 @@
+____________________________________TEST CLASS'I______________________________________
+package hakancemgercek.test;
+
+public class Test {
+
+    public static void main(String[] args) {
+        Manager manager_object = new Manager("Hakan",30000,"Development",3);
+        manager_object.increase_salary(200);
+        manager_object.view_informations();
+    }
+}
+____________________________________EMPLOYEE CLASS'I______________________________________
+package hakancemgercek.test;
+
+public class Employee {             //Superclass (Ana class/Temel class).
+    private String name;
+    private int salary;             //Her çalışanın sahip olduğu ORTAK özellikler.
+    private String department;
+    
+    public Employee(String name, int salary, String department){        
+        //Superclass'a ait bir constructor (yapıcı metot.)
+        //Bu class'a yeni bir nesne oluşturulunca çalışacak olan metot.
+        this.name = name;
+        this.salary = salary;
+        this.department = department;
+    }
+    
+    //Override işlemi için, 'private' özelliklere ulaşmamızı sağlayan getter&setter'lar
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public int getSalary() {
+        return salary;
+    }
+    
+    public void setSalary(int salary_increase_amount) {
+        this.salary = this.salary+salary_increase_amount;
+    }
+    
+    public String getDepartment() {
+        return department;
+    }
+    
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+    
+    //Bir metot.
+    public void work(){
+        System.out.println("All the employees are working...");
+    }    
+    
+    //Bilgileri gösteren bir metot.
+    public void view_informations(){
+        System.out.println("Name: "+this.getName());
+        System.out.println("Salary: "+this.getSalary()+" $");
+        System.out.println("Department: "+this.getDepartment());
+        /* 
+        Override ederek yeni metodumuzun yanında bir de superclass'taki override edilmemiş olan
+        metot da çağrılsın istiyorsak yukarıdaki ifadeleri yoruma alıp şu ifadeyi ekleriz:
+        super().view_informations;        
+        */
+        
+        System.out.println("Departman: "+this.getDepartment());
+    }
+    
+    //Bir metot.
+    public void change_department(String new_department){
+        this.setDepartment(new_department);
+        System.out.println("Current department has been changed to: " + this.getDepartment());
+    }
+}
+____________________________________MANAGER CLASS'I______________________________________
+package hakancemgercek.test;
+
+public class Manager extends Employee{
+    //'Employee' superclass'ının subclass'ı (Alt class'ı).
+    
+    private int responsible_employee_number; 
+    //superclass'ta olmayan ekstra özellik. 
+    
+    public Manager(String name, int salary, String department, int responsible_employee_number){
+        /*this.name = name;
+        this.salary = salary;
+        this.department = department;*/
+        super(name, salary, department);
+        /*'super' ifadesi ile Employee superclass'ının constructor'ı (yapıcı
+        metodu) çağrıldı ve parametre olarak da gönderilecek değerler girildi.
+        Bu yöntemin amacı, superclass'taki 'private' olan özelliklere dolaylı 
+        olarak ERİŞEBİLMEKTİR.*/
+        this.responsible_employee_number = responsible_employee_number;
+        //Constructor'da başlatmak için ekstra özelliği tanımladık ve değer verdik.
+        super.view_informations();
+        /*superclass'tan kalıtım yoluyla aldığımız bir metot olduğu için
+        'super' ifadesi ile kullanıldı.*/
+    }
+    
+    public void increase_salary(int salary_increase_amount){
+        //superclass'ta olmayan ekstra bir metot.
+        setSalary(salary_increase_amount);
+        System.out.println("The salaries of all the employees have increased by "+salary_increase_amount+" $");
+    }
+    
+    public void view_informations(){
+        //Override edilmiş superclass metodu.
+        /*Eğer bu isimdeki metot çağrılırsa override edildiği için bu class'taki
+        bu metot çağrılacaktır. Superclass'taki aynı isimdeki metot override 
+        edildiği için iptal edilmiş olacaktır.*/
+        System.out.println("Name: "+this.getName());
+        System.out.println("Salary: "+this.getSalary()+" $");
+        System.out.println("Departman: "+this.getDepartment());
+        System.out.println("Responsible employee number: "+this.responsible_employee_number);
+        //Ekstra olarak bir özellik eklendi (responsible_employee_number).
+    }
+}
