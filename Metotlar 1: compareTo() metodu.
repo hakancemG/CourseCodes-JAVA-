@@ -1,0 +1,15 @@
+//Metotlar 1: compareTo() metodu.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001{
+    
+    public static void main(String[] args){
+        
+        String str1 = "Java ABC";
+        String str2 = "Java DEF";
+        
+        int sonuc = str1.compareTo(str2);
+        System.out.println(sonuc);
+    }
+}
