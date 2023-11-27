@@ -1,0 +1,31 @@
+//Metot kavramı: geriye değer döndüren ve parametre alan metot örneği.
+//Dikdörtgenin alanını hesaplayan metot.
+
+package hkndeneme;	// Hakan Cem Gerçek
+
+import java.util.Scanner;
+
+public class Proje001{
+    
+    public static void main(String[] args){
+        //Scanner nesnesi oluştur.
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.print("Kısa kenarı giriniz(cm): ");
+        int kisa = keyboard.nextInt();
+        
+        System.out.print("Uzun kenarı giriniz(cm): ");
+        int uzun = keyboard.nextInt();
+        
+        //call ve print işlemi.
+        System.out.print("Dikdörtgenin alanı: "+ DikdortgenAlan(kisa, uzun) + " cm²");
+    }
+    
+    //ilgili metot.
+    public static int DikdortgenAlan(int kisaKenar, int uzunKenar){
+        
+        int alan = kisaKenar * uzunKenar;
+        
+        return alan;
+    }   
+}
