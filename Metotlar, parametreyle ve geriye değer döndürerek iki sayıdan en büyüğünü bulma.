@@ -1,0 +1,24 @@
+//Metotlar, parametreyle ve geriye değer döndürerek iki sayıdan en büyüğünü bulma.
+
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001{
+    
+    public static void main(String[] args){
+        Scanner klavye = new Scanner(System.in);
+        System.out.print("1. sayıyı giriniz: ");
+        int sayi1 = klavye.nextInt();
+        System.out.print("2. sayıyı giriniz: ");
+        int sayi2 = klavye.nextInt();
+        //call işlemi.
+        System.out.print("Girilen sayılardan en büyük olanı: "+EnBuyuk(sayi1,sayi2));
+    }
+    
+    //ilgili metot.
+    public static int EnBuyuk(int prm1, int prm2){
+        int maks;
+        if(prm1>prm2) maks=prm1;
+        else maks = prm2;
+        return maks;
+    }    
+}
