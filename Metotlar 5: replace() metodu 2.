@@ -1,0 +1,30 @@
+//Metotlar 5: replace() metodu 2. 
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001{
+    
+    public static void main(String[] args){
+        String str1 = "Fuslera";
+        
+        String str2 = str1.replace('F', 'M');
+        
+        System.out.println(str2);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
