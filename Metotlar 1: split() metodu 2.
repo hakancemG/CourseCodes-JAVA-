@@ -1,0 +1,22 @@
+//Metotlar 1: split() metodu 2.
+
+package hkndeneme;  // Hakan Cem Gerçek
+import java.util.Scanner;
+public class Proje001{
+    
+    public static void main(String[] args){
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Cümlelerinizi giriniz: ");
+        String metin = keyboard.nextLine();
+        //ilgili metot içn call işlemi.
+        splitMetodu(metin);
+   }
+    //ilgili metot.
+    public static void splitMetodu(String parametre1){
+        String[] splitMetin = parametre1.split("a");
+        for(String str : splitMetin){
+            System.out.println(str);
+        }
+        
+    }
+}
