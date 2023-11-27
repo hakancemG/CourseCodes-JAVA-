@@ -1,0 +1,28 @@
+//Metotlar 4: length() metodu.
+
+package hkndeneme;  // Hakan Cem Gerçek
+
+public class Proje001{
+    
+    public static void main(String[] args){
+        String str = "tr_1905 Gala?";
+        int uzunluk = str.length();
+        System.out.println(uzunluk);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
