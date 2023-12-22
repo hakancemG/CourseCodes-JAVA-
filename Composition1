@@ -1,0 +1,281 @@
+___________________________________________Test class'ı_____________________________________________________
+package hakancemgercek.composition;
+
+public class Test {
+    public static void main(String[] args){
+        Resolution resolution = new Resolution(1920, 1080);
+        Monitor monitor  = new Monitor("Vs197De", "ASUS", "18.5", resolution);
+        Kasa kasa = new Kasa("ShadowBlade", "Shadow", "Cam");
+        Anakart anakart = new Anakart("850-Pro", "ASUS", "Win-10", 8);
+        
+        Bilgisayar pc= new Bilgisayar(monitor, kasa, anakart);
+        pc.getKasa().bilgisayari_ac();
+        pc.getMonitor().monitor_kapat();
+        pc.getAnakart().isletim_sistemi_yukle("Ubuntu");
+    }
+}
+____________________________________________Anakart class'ı_________________________________________________
+package hakancemgercek.composition;
+
+public class Anakart {
+    private String model;
+    private String uretim;
+    private String isletim_sistemi;
+    private int yuva_sayisi;
+    
+    public Anakart(String model, String uretim, String isletim_sistemi, int yuva_sayisi){
+        this.model = model;
+        this.uretim = uretim;
+        this.isletim_sistemi = isletim_sistemi;
+        this.yuva_sayisi = yuva_sayisi;
+        
+        
+        
+    }
+    public void isletim_sistemi_yukle(String isletim_sistemi){
+        this.isletim_sistemi = this.isletim_sistemi;
+        System.out.println("İşletim sistemi yüklendi: "+isletim_sistemi);
+    }
+
+    /**
+     * @return the model
+     */
+    public String getModel() {
+        return model;
+    }
+
+    /**
+     * @param model the model to set
+     */
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    /**
+     * @return the uretim
+     */
+    public String getUretim() {
+        return uretim;
+    }
+
+    /**
+     * @param uretim the uretim to set
+     */
+    public void setUretim(String uretim) {
+        this.uretim = uretim;
+    }
+
+    /**
+     * @return the isletim_sistemi
+     */
+    public String getIsletim_sistemi() {
+        return isletim_sistemi;
+    }
+
+    /**
+     * @param isletim_sistemi the isletim_sistemi to set
+     */
+    public void setIsletim_sistemi(String isletim_sistemi) {
+        this.isletim_sistemi = isletim_sistemi;
+    }
+
+    /**
+     * @return the yuva_sayisi
+     */
+    public int getYuva_sayisi() {
+        return yuva_sayisi;
+    }
+
+    /**
+     * @param yuva_sayisi the yuva_sayisi to set
+     */
+    public void setYuva_sayisi(int yuva_sayisi) {
+        this.yuva_sayisi = yuva_sayisi;
+    }
+}
+_______________________________________________Kasa class'ı__________________________________________________
+package hakancemgercek.composition;
+
+public class Kasa {
+    private String model;
+    private String uretim;
+    private String malzeme;
+
+    public Kasa(String model, String uretim, String malzeme) {
+        this.model = model;
+        this.uretim = uretim;
+        this.malzeme = malzeme;
+    }
+    
+    public void bilgisayari_ac(){
+        System.out.println("Bilgisayar açılıyor...");
+    }
+
+    /**
+     * @return the model
+     */
+    public String getModel() {
+        return model;
+    }
+
+    /**
+     * @param model the model to set
+     */
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    /**
+     * @return the uretim
+     */
+    public String getUretim() {
+        return uretim;
+    }
+
+    /**
+     * @param uretim the uretim to set
+     */
+    public void setUretim(String uretim) {
+        this.uretim = uretim;
+    }
+
+    /**
+     * @return the malzeme
+     */
+    public String getMalzeme() {
+        return malzeme;
+    }
+
+    /**
+     * @param malzeme the malzeme to set
+     */
+    public void setMalzeme(String malzeme) {
+        this.malzeme = malzeme;
+    }
+    
+    
+}
+_____________________________________________Resolution class'ı______________________________________________
+package hakancemgercek.composition;
+
+public class Resolution {
+    private int en;
+    private int boy;
+
+    public Resolution(int en, int boy) {
+        this.en = en;
+        this.boy = boy;
+    }
+
+    /**
+     * @return the en
+     */
+    public int getEn() {
+        return en;
+    }
+
+    /**
+     * @param en the en to set
+     */
+    public void setEn(int en) {
+        this.en = en;
+    }
+
+    /**
+     * @return the boy
+     */
+    public int getBoy() {
+        return boy;
+    }
+
+    /**
+     * @param boy the boy to set
+     */
+    public void setBoy(int boy) {
+        this.boy = boy;
+    }
+    
+    
+}
+
+_________________________________________Monitor class'ı____________________________________________________
+package hakancemgercek.composition;
+
+public class Monitor {
+    private String model;
+    private String uretici;
+    private String boyut;
+    private Resolution resolution;
+
+    public Monitor(String model, String uretici, String boyut, Resolution resolution) {
+        this.model = model;
+        this.uretici = uretici;
+        this.boyut = boyut;
+        this.resolution = resolution;
+    }    
+    
+    public void monitor_kapat(){
+        System.out.println("Monitör kapatılıyor...");
+    }    
+    
+}
+
+__________________________________________Bilgisayar class'ı_________________________________________________
+package hakancemgercek.composition;
+
+public class Bilgisayar {
+    private Monitor monitor;
+    private Kasa kasa;
+    private Anakart anakart;
+
+    public Bilgisayar(Monitor monitor, Kasa kasa, Anakart anakart) {
+        this.monitor = monitor;
+        this.kasa = kasa;
+        this.anakart = anakart;
+    }
+
+    /**
+     * @return the monitor
+     */
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    /**
+     * @param monitor the monitor to set
+     */
+    public void setMonitor(Monitor monitor) {
+        this.monitor = monitor;
+    }
+
+    /**
+     * @return the kasa
+     */
+    public Kasa getKasa() {
+        return kasa;
+    }
+
+    /**
+     * @param kasa the kasa to set
+     */
+    public void setKasa(Kasa kasa) {
+        this.kasa = kasa;
+    }
+
+    /**
+     * @return the anakart
+     */
+    public Anakart getAnakart() {
+        return anakart;
+    }
+
+    /**
+     * @param anakart the anakart to set
+     */
+    public void setAnakart(Anakart anakart) {
+        this.anakart = anakart;
+    }
+    
+    
+}
+
