@@ -1,0 +1,75 @@
+package hakancemgercek.polymorphism;
+// Hayvan class'ı---------------------------------
+class Hayvan{ // superclass Hayvan.
+    private String isim;
+    
+    public Hayvan(String isim){
+        this.isim = isim;
+    }
+    public String getIsim(){
+        return this.isim;
+    }
+    public void setIsim(String isim){
+        this.isim = isim;
+    }
+    public String getHayvan(){
+        return isim;
+    }
+    
+    public void setHayvan(String isim){
+        this.isim=isim;
+    }
+    
+    public String konus(){
+        return "Hayvan konuşuyor...";
+    }
+}
+// Kedi class'ı---------------------------------
+class Kedi extends Hayvan{ // subclass kedi
+    /* Aynı dosyada birden fazla class kulllanılmak isteniyorsa,
+       "class" tanımlamasından önce "public" erişim belirteci 
+       kullanılmaz. Kullanılırsa, class dosyasının ismi yazılımak
+       zorundadır.    
+    */
+    public Kedi(String isim){
+        super(isim);
+    }
+    @Override
+    public String konus(){
+        return this.getIsim()+" miyavlıyor.";
+    }
+}
+// Köpek class'ı---------------------------------
+class Kopek extends Hayvan{ // subclass köpek
+    public Kopek(String isim){
+        super(isim);
+    }
+    @Override
+    public String konus(){
+        return this.getIsim()+" havlıyor.";
+    }
+}
+// Beygir class'ı---------------------------------
+class Beygir extends Hayvan{ // subclass beygir
+    public Beygir(String isim){
+        super(isim);
+    }
+    @Override
+    public String konus(){
+        return this.getIsim()+" kişniyor.";
+    }
+}
+
+// Main class'ı---------------------------------
+public class Main {
+    public static void main(String[] args){
+        konustur(new Kedi("Hıdır")); 
+        /* Yeni Kedi nesnesi "konustur" metodundaki parametre olan Hayvan
+           nesnesinin referansına (ref_hayvan) atanmış oluyor. */
+        konustur(new Kopek("Esmer"));
+        konustur(new Beygir("Niyazi"));
+    }
+    public static void konustur(Hayvan ref_hayvan){
+        System.out.println(ref_hayvan.konus());
+    }
+}
