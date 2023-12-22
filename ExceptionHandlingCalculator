@@ -1,0 +1,84 @@
+/**
+ *  Project        : A calculator program by using 'try-catch' blocks.
+ *  Project author : Hakan Cem GERÇEK
+ **/
+
+package hakancemgercek.exceptionhandlingcalculator; // My package.
+
+import java.util.InputMismatchException;    // Exception import.
+import java.util.Scanner;                   // Scanner import.
+
+public class ExceptionHandlingCalculator {  // My base class.
+
+    public static void main(String[] args) {
+        // Displays the selection menu.
+        System.out.println("########################");
+        System.out.println("1. Addition\n"
+                + "2. Subtraction\n"
+                + "3. Multiply\n"
+                + "4. Division\n"
+                + "Press 'q' to exit.");
+        System.out.println("########################");
+        
+        Scanner keyboard = new Scanner(System.in);      // Creating a scanner object reference.
+        
+        int first_number,second_number;                       // A Variable to operate.  
+        String operator = keyboard.nextLine();                // A Variable for switch statements.                 
+        
+        try{    // try blocks.
+            switch(operator){   
+            case "1":   //Add operations.
+                System.out.print("The first number: ");
+                first_number = keyboard.nextInt();
+                System.out.print("The second number: ");
+                second_number = keyboard.nextInt();
+                System.out.println("The addition result: "+(first_number+second_number));
+                break;
+            case "2":   //Subtract operations.
+                System.out.print("The first number: ");
+                first_number = keyboard.nextInt();
+                System.out.print("The second number: ");
+                second_number = keyboard.nextInt();
+                System.out.println("The subtraction result: "+(first_number-second_number));
+                break;
+            case "3":   //Multiply operations.
+                System.out.print("The first number: ");
+                first_number = keyboard.nextInt();
+                System.out.print("The second number: ");
+                second_number = keyboard.nextInt();
+                if(first_number>10000 && second_number>10000){ // if statement for invalid input.
+                    throw new MultiplyException();             // throwing my own exception.
+                }
+                System.out.println("The multiplication result: "+(first_number*second_number));
+                break;
+            case "4":   //Divide operations.
+                System.out.print("The first number: ");
+                first_number = keyboard.nextInt();
+                System.out.print("The second number: ");
+                second_number = keyboard.nextInt();
+                System.out.println("The division of result: "+(first_number/second_number));
+                break;
+            case "q":   // Press 'q' to exit.
+                System.out.print("Exiting the current progress...");
+                break;
+            default:    // Invalid input.
+                System.out.println("Invalid operation!");
+            }
+        }
+        catch(ArithmeticException e){       // catch block for divide by zero.
+            System.out.println("A number can not divided by zero!");
+        }
+        catch(InputMismatchException e){    // catch block for missmatch input.
+            System.out.println("Enter the correct type!");
+        } catch (MultiplyException ex) {    // catch block for my own exception class.
+            ex.printStackTrace();           // Prints the overriden method in my exception class.
+        }
+        
+    }
+}
+class MultiplyException extends Exception{  // My custom exception class.
+    @Override
+    public void printStackTrace() { // Exception message by using overriden method.
+        System.out.println("Both numbers are too large(max 10k each)!");
+    }
+}
