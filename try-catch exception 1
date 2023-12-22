@@ -1,0 +1,74 @@
+// Unchecked exceptions by using try-catch blocks and a custom exception handling.
+
+package hakancemgercek.test03;
+
+public class Test03 {
+
+    public static void main(String[] args) {
+        /*
+        int[] array = {0,1,2,3,4,5};
+        System.out.println(array[6]); 
+        //ERROR!
+        [ArrayIndexOutOfBoundsException.]
+        */
+        try{
+            int [] array1 = {0,1,2,3,4,5};
+            System.out.println(array1[6]);
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("Array index out of bound exception occured!");
+        }
+        finally{
+            System.out.println("This is a 'finally' statement.");
+        }
+        
+        /*
+        int a = 12;
+        int b = 0;
+        System.out.println(a/b);
+        //ERROR!
+        [ArithmeticException.]
+        */
+        try{
+            int a = 12;
+            int b = 0;
+            System.out.println(a/b);
+        }
+        catch(ArithmeticException e){
+            System.out.println("A number can not divided by zero!");
+        }
+        
+        // Custom exception class usage by values.
+        try{
+            int a = -1;
+            int b = -2;
+            if(a<0 && b<0){
+                throw new MyCustomException();
+            }
+        }
+        catch(MyCustomException e){
+            e.printStackTrace();
+        }
+        
+        // Custom exception class usage by a method.
+        try {
+            underAgeControl(12);
+        } catch (MyCustomException ex) {
+            ex.printStackTrace();
+        }
+        
+    }
+    // A custom method for using throw & throws keywords.
+    public static void underAgeControl(int age) throws MyCustomException{
+        if(age<18){
+            throw new MyCustomException();
+        }
+    }   
+}
+class MyCustomException extends Exception{
+
+    @Override
+    public void printStackTrace() {
+        System.out.println("My custom exception handled!");
+    }
+}
