@@ -1,0 +1,127 @@
+____________________________Test class'ı___________________________________
+package hakancemgercek.polymorphism;
+
+public class Test {
+    public static void main(String[] args){
+        
+        Animal ref_animal = new Animal("Striker", "felis tigris", "Black-gold ", 6);
+        Dog ref_dog = new Dog();
+        Cat ref_cat = new Cat();
+        System.out.println("---------------------------");
+        ref_animal.viewInfo();
+        ref_animal.behaivor();
+        System.out.println("---------------------------");
+        ref_dog.viewInfo();
+        ref_dog.behaivor();
+        System.out.println("---------------------------");
+        ref_cat.viewInfo();
+        ref_cat.behaivor();
+        System.out.println("---------------------------");
+        petTheAnimal(ref_animal);
+        petTheAnimal(ref_cat);
+        petTheAnimal(ref_dog);
+        
+    }
+    public static void petTheAnimal(Object ref_object){
+        if(ref_object instanceof Animal){
+            Animal ref_animal = (Animal)ref_object;
+            ref_animal.petAnimal();
+        }
+        else if(ref_object instanceof Dog){
+            Dog ref_dog = (Dog)ref_object;
+            ref_dog.petAnimal();
+        }
+        else if(ref_object instanceof Cat){
+            Cat ref_cat = (Cat)ref_object;
+            ref_cat.petAnimal();
+        }
+    }
+}
+____________________________Animal class'ı_________________________________
+package hakancemgercek.polymorphism;
+
+public class Animal {
+    private String name;
+    private String latin_name;
+    private String fur_color;
+    private int age;
+    
+    public Animal(String name, String latin_name, String fur_folor, int age){
+        this.name = name;
+        this.latin_name = latin_name;
+        this.fur_color = fur_folor;
+        this.age = age;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getLatinName(){
+        return this.latin_name;
+    }
+    public String getFurColor(){
+        return this.fur_color;
+    }
+    public int getAge(){
+        return age;
+    }
+    public void setAge(int age){
+        this.age = age;
+    }
+    
+    public void viewInfo(){
+        System.out.println("Animal name: "+name);
+        System.out.println("Animal latin name: "+latin_name);
+        System.out.println("Animal fur color: "+fur_color);        
+    }
+    
+    public void behaivor(){
+        System.out.println(this.name+" is sleeping.");
+    }
+    
+    public void petAnimal(){
+        System.out.println(name+" is happy!");
+    }
+}
+____________________________Dog class'ı____________________________________
+package hakancemgercek.polymorphism;
+
+public class Dog extends Animal {
+    public Dog(){
+        super("Sharky", "canis lupus", "black-brown",2);
+    }
+    @Override
+    public void behaivor(){
+        System.out.println(getName()+" is sitting.");
+    }
+    @Override
+    public void viewInfo(){
+        super.viewInfo();
+    }
+    @Override
+    public void petAnimal(){
+        System.out.println(getName()+" is licking you!");
+    }
+}
+____________________________Cat class'ı____________________________________
+package hakancemgercek.polymorphism;
+
+public class Cat extends Animal {
+    public Cat(){
+        super("Lily", "felis domesticus", "Orange", 1);
+    }
+    @Override
+    public void behaivor(){
+        System.out.println(getName()+" is slapping the dog.");
+    }
+    @Override
+    public void viewInfo(){
+        super.viewInfo();
+    }
+    @Override
+    public void petAnimal(){
+        System.out.println(getName()+" is purring!");;
+    }
+}
