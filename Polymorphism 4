@@ -1,0 +1,103 @@
+package hakancemgercek.polymorphism;
+// Hayvan class'ı---------------------------------
+class Hayvan{ // superclass Hayvan.
+    private String isim;
+    
+    public Hayvan(String isim){
+        this.isim = isim;
+    }
+    public String getIsim(){
+        return this.isim;
+    }
+    public void setIsim(String isim){
+        this.isim = isim;
+    }
+    public String getHayvan(){
+        return isim;
+    }
+    
+    public void setHayvan(String isim){
+        this.isim=isim;
+    }
+    
+    public String konus(){
+        return "Hayvan konuşuyor...";
+    }
+}
+// Kedi class'ı---------------------------------
+class Kedi extends Hayvan{ // subclass kedi
+    /* Aynı dosyada birden fazla class kulllanılmak isteniyorsa,
+       "class" tanımlamasından önce "public" erişim belirteci 
+       kullanılmaz. Kullanılırsa, class dosyasının ismi yazılımak
+       zorundadır.    
+    */
+    public Kedi(String isim){
+        super(isim);
+    }
+    @Override
+    public String konus(){
+        return this.getIsim()+" miyavlıyor.";
+    }
+}
+// Köpek class'ı---------------------------------
+class Kopek extends Hayvan{ // subclass köpek
+    public Kopek(String isim){
+        super(isim);
+    }
+    @Override
+    public String konus(){
+        return this.getIsim()+" havlıyor.";
+    }
+}
+// Beygir class'ı---------------------------------
+class Beygir extends Hayvan{ // subclass beygir
+    public Beygir(String isim){
+        super(isim);
+    }
+    @Override
+    public String konus(){
+        return this.getIsim()+" kişniyor.";
+    }
+}
+
+// Main class'ı---------------------------------
+public class Main {
+    public static void main(String[] args){
+        /* Aslında Java'da tüm class'lar Object adıdaki bir superclass'tandır.
+           herhangi bir inheritance işlemi yapılmasa dahi class tanımlarken 
+           otomatik olarak Obejct class'ından türetilme gerçekleştirilir. Bu 
+           Object class'ından belli metotları kullanabiliriz.        
+        */
+        Kedi ref_kedi = new Kedi("Lily");
+        Kopek ref_kopek = new Kopek("Jorkey");
+        Beygir ref_beygir = new Beygir("Namık");
+        Hayvan ref_hayvan = new Hayvan("Zeytin");
+        
+        konustur(ref_kopek);
+        konustur(ref_kedi);
+        konustur(ref_beygir);
+        konustur(ref_hayvan);
+    }
+    public static void konustur(Object ref_object){
+        if(ref_object instanceof Kopek){
+            
+            Kopek ref_kopek = (Kopek)ref_object;
+            System.out.println(ref_kopek.konus());
+        }
+        else if(ref_object instanceof Kedi){
+            
+            Kedi ref_kedi = (Kedi)ref_object;
+            System.out.println(ref_kedi.konus());
+        }
+        else if(ref_object instanceof Beygir){
+            
+            Beygir ref_beygir = (Beygir)ref_object;
+            System.out.println(ref_beygir.konus());
+        }
+        else if(ref_object instanceof Hayvan){
+            
+            Hayvan ref_hayvan = (Hayvan)ref_object;
+            System.out.println(ref_hayvan.konus());
+        }
+    }
+}
