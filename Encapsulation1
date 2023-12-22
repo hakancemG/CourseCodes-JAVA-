@@ -1,0 +1,79 @@
+___________________________________________Test class'ı_____________________________________________________
+package hakancemgercek.encapsulation;
+
+public class Test {
+    public static void main(String[] args){
+        /*Abone abone = new Abone();
+        abone.isim = "Hakan";
+        abone.bakiye = 200;
+        abone.sehir = "Elazığ";
+        abone.dogalgaz_kullan(200); */
+        
+        GelismisAbone abone = new GelismisAbone("Hakan", "Elazığ", 200);
+        abone.bakiye_ogren();
+    }
+}
+________________________________________Abone class'ı_______________________________________________________
+package hakancemgercek.encapsulation;
+//Doğalgaz abonesi.
+public class Abone {
+    public String isim;
+    public String sehir;
+    public int bakiye;
+    
+    public void dogalgaz_kullan(int miktar){
+        if(this.bakiye - miktar<0){
+            System.out.println("Yetersiz bakiye!");
+        }
+        else{
+            this.bakiye -= miktar;
+            if(this.bakiye <= 0){
+                System.out.println("Bakiye bitmiştir. "
+                        + "Yükleme yapın. Limit = 120tl");
+            }
+            else{
+                System.out.println("Yeni bakiye: "+this.bakiye);
+            }
+        }
+    }
+    
+    public void bakiye_ogren(){
+        System.out.println("Bakiye: "+bakiye);
+    }
+}
+_____________________________________GelismisAbone class'ı__________________________________________________
+package hakancemgercek.encapsulation;
+
+public class GelismisAbone {
+    private String abone_isim;
+    private String sehir;
+    private int bakiye=120;
+    
+    public GelismisAbone(String isim, String sehir, int bakiye){
+        this.abone_isim = isim;
+        this.sehir = sehir;
+        if(bakiye>=0 && bakiye<=120){
+            this.bakiye = bakiye;
+        }        
+    }
+    public void dogalgaz_kullan(int miktar){
+        if(this.bakiye - miktar<0){
+            System.out.println("Yetersiz bakiye!");
+        }
+        else{
+            this.bakiye -= miktar;
+            if(this.bakiye <= 0){
+                System.out.println("Bakiye bitmiştir. "
+                        + "Yükleme yapın. Limit = 120tl");
+            }
+            else{
+                System.out.println("Yeni bakiye: "+this.bakiye);
+            }
+        }
+    }
+    
+    public void bakiye_ogren(){
+        System.out.println("Bakiye: "+bakiye);
+    }
+}
+____________________________________________________________________________________________________________
