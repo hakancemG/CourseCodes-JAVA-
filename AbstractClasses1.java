@@ -1,4 +1,3 @@
-______________________________________________Main class'ı___________________________________________________________
 package hakancemgercek.abstractclasses;
 
 public class AbstractClasses {
@@ -16,11 +15,6 @@ public class AbstractClasses {
         ref_shape2.viewName();
     }
 }
-
-______________________________________________Shape class'ı__________________________________________________________
-
-____________package hakancemgercek.abstractclasses;
-
 public abstract class Shape {
     private String name;
     
@@ -41,9 +35,6 @@ public abstract class Shape {
     }
     abstract void calculateArea();
 }
-______________________________________________Square class'ı_________________________________________________________
-package hakancemgercek.abstractclasses;
-
 public class Square extends Shape{
     
     private int edge;
@@ -67,10 +58,6 @@ public class Square extends Shape{
                                  +" "+(edge*edge));
     }
 }
-
-______________________________________________Circle class'ı_________________________________________________________
-package hakancemgercek.abstractclasses;
-
 public class Circle extends Shape {
     private int radius;
 
